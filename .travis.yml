@@ -61,7 +61,7 @@ deploy:
   api_key: "$GIT_TOKEN"
   #部署文件路径：对于Android就部署生成的apk文件
   file:
-    -app/release
+    - app/release
   #避免Travis在部署清空生成的apk文件
 #  skip_cleanup: true
   #发布时机
