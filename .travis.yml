@@ -46,10 +46,11 @@ android:
     - extra-google-android-support
 script:
   # 生成APK
-  - ./gradlew clean
+#  - ./gradlew clean
   #    - ./gradlew install
   #    - ./gradlew bintrayUpload
-  - ./gradlew assembleDebug
+#  - ./gradlew assembleDebug
+  - ./gradlew assembleRelease
 
 #部署
 deploy:
