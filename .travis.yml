@@ -73,9 +73,11 @@ deploy:
     tags: true
     branch:  master
 before_install:
+  - chmod a+x gradlew
+  - rvm install 2.1.5
   - gem install fir-cli
 after_deploy:
-  - fir p app/build/outputs/apk/release/buff.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+  - fir publish app/build/outputs/apk/release/buff.apk -T $FIR_IM -c "`git cat-file tag $TRAVIS_TAG`"
 
 notifications:
   email:
