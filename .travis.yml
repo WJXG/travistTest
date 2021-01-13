@@ -50,6 +50,7 @@ script:
   #    - ./gradlew install
   #    - ./gradlew bintrayUpload
 #  - ./gradlew assembleDebug
+  -  ./chmod +x gradlew
   - ./gradlew assembleRelease
 
 #部署
