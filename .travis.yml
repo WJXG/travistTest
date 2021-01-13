@@ -43,7 +43,7 @@ android:
     # Android support Repository
     - extra-android-m2repository
     # Support Library
-#    - extra-android-support
+    - extra-android-m2repository-com-android-support
 script:
   # 生成APK
 #  - ./gradlew clean
