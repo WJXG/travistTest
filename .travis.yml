@@ -62,7 +62,7 @@ deploy:
   file:
     - app/build/outputs/apk/release/app-release.apk
   #避免Travis在部署清空生成的apk文件
-#  skip_cleanup: true
+  skip_cleanup: true
   #发布时机
   on:
     #tags设置为true表示只有在tag的情况下才部署
