@@ -51,6 +51,10 @@ script:
   -  chmod +x gradlew
   - ./gradlew assembleRelease
 
+before_deploy:     # 部署之前
+  # 使用 mv 命令进行修改 apk 文件的名字
+  - mv app/build/outputs/apk/release/app-release.apk app/build/outputs/apk/release/buff.apk
+
 #部署
 deploy:
   #部署到github release
@@ -60,11 +64,11 @@ deploy:
   api_key: "$GIT_TOKEN"
   #部署文件路径：对于Android就部署生成的apk文件
   file:
-    - app/build/outputs/apk/release/app-release.apk
+    - app/build/outputs/apk/release/buff.apk
   #避免Travis在部署清空生成的apk文件
   skip_cleanup: true
   #发布时机
   on:
     #tags设置为true表示只有在tag的情况下才部署
     tags: true
-    all_branches: true
+    branch:  master
