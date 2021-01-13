@@ -43,10 +43,10 @@ android:
     # Android support Repository
     - extra-android-m2repository
     # Support Library
-#    - extra-android-support
+    - extra-android-support
 script:
   # 生成APK
-#  - ./gradlew clean
+  - ./gradlew clean
   #    - ./gradlew install
   #    - ./gradlew bintrayUpload
 #  - ./gradlew assembleDebug
