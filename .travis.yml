@@ -43,10 +43,10 @@ android:
     # Android support Repository
     - extra-android-m2repository
     # Support Library
-    - extra-m2repository-com-android-support
+    - extra-android-support
 script:
   # 生成APK
-  - ./gradlew clean
+#  - ./gradlew clean
   #    - ./gradlew install
   #    - ./gradlew bintrayUpload
 #  - ./gradlew assembleDebug
@@ -61,9 +61,9 @@ deploy:
   api_key: "$GIT_TOKEN"
   #部署文件路径：对于Android就部署生成的apk文件
   file:
-    - app/release
+    - app/build/outputs/apk/release/app-release.apk
   #避免Travis在部署清空生成的apk文件
-#  skip_cleanup: true
+  skip_cleanup: true
   #发布时机
   on:
     #tags设置为true表示只有在tag的情况下才部署
