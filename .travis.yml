@@ -72,3 +72,11 @@ deploy:
     #tags设置为true表示只有在tag的情况下才部署
     tags: true
     branch:  master
+before_install:
+  - gem install fir-cli
+after_deploy:
+  - fir p app/build/outputs/apk/release/buff.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+
+notifications:
+  email:
+    - weijiangxing777@qq.com
